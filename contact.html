@@ -351,32 +351,27 @@
                 used for any other purposes. All fields are required.
               </p>
 
-              <form
-                method="post"
-                action="contact_form_message.php"
-                name="contactform"
-                id="contactform"
-              >
+              <form name="contactform" id="contactform">
                 <fieldset>
                   <div id="message"></div>
                   <div class="full-width">
                     <label for="name">Name</label>
-                    <input type="text" id="name" />
+                    <input type="text" id="name" required />
                   </div>
 
                   <div class="full-width">
                     <label for="email">Email address</label>
-                    <input type="email" id="email" />
+                    <input type="email" id="email" required />
                   </div>
 
                   <div class="full-width">
                     <label for="phone">Phone number</label>
-                    <input type="number" id="phone" />
+                    <input type="number" id="phone" required />
                   </div>
 
                   <div class="full-width">
                     <label for="comments">Your message</label>
-                    <textarea id="comments"></textarea>
+                    <textarea id="comments" required></textarea>
                   </div>
 
                   <div class="full-width">
@@ -389,6 +384,45 @@
                   </div>
                 </fieldset>
               </form>
+              <div id="message-submit-success">
+                <p>
+                  ✓ Thanks for your enquiry. <br />
+                  We will respond within 24 hours.
+                </p>
+                <p></p>
+              </div>
+
+              <script>
+                function submitForm() {
+                  const fname = document.getElementById("name").value;
+                  const email = document.getElementById("email").value;
+                  const phone = document.getElementById("phone").value;
+                  const lname = "Cruise";
+                  const url =
+                    "https://letzbefriends.com/ords/lez/llr/ocruiselead?";
+                  var url_full =
+                    url +
+                    "fname=" +
+                    fname +
+                    "&lname=" +
+                    lname +
+                    "&tel=" +
+                    phone +
+                    "&em=" +
+                    email;
+                  var xmlHttp = new XMLHttpRequest();
+                  console.log(url_full);
+                  xmlHttp.open("GET", url_full, true);
+                  xmlHttp.send(null);
+                  document.getElementById("contactform").style.display = "none";
+                  document.getElementById(
+                    "message-submit-success"
+                  ).style.display = "inline-block";
+                  event.preventDefault();
+                }
+                const form = document.getElementById("contactform");
+                form.addEventListener("submit", submitForm);
+              </script>
             </div>
           </div>
           <div class="one-half">
