@@ -397,6 +397,7 @@
                   const fname = document.getElementById("name").value;
                   const email = document.getElementById("email").value;
                   const phone = document.getElementById("phone").value;
+                  const msg = document.getElementById("comments").value;
                   const lname = "Cruise";
                   const url =
                     "https://letzbefriends.com/ords/lez/llr/ocruiselead?";
@@ -409,7 +410,9 @@
                     "&tel=" +
                     phone +
                     "&em=" +
-                    email;
+                    email +
+                    "&msg=" +
+                    msg;
                   var xmlHttp = new XMLHttpRequest();
                   console.log(url_full);
                   xmlHttp.open("GET", url_full, true);
