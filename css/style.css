@@ -3771,3 +3771,8 @@ div.radio input {
   text-align: center;
   display: none;
 }
+
+.features-icon-text {
+  text-align: center !important;
+  padding-bottom: 10px !important;
+}
