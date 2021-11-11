@@ -3638,9 +3638,9 @@ div.radio input {
     width: 100%;
   }
 
-  .heightfix {
+  /* .heightfix {
     height: auto !important;
-  }
+  } */
 
   nav.tabs.six li {
     font-size: 14px;
