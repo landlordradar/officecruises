@@ -2021,7 +2021,7 @@ div.border img {
   font-weight: 300;
 }
 .details {
-  display: block;
+  display: inline-block;
   width: 100%;
   border: 1px solid #ddd;
   border-bottom: none;
