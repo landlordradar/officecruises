@@ -3762,12 +3762,12 @@ div.radio input {
   }
 }
 
+/* EXTRA CSS */
+
 /* Contact Form Success Message */
 #message-submit-success {
   background-color: #dff0d8;
-  width: 250px;
-  height: 100px;
+  padding: 50px;
   text-align: center;
-  padding: 15px;
   display: none;
 }
