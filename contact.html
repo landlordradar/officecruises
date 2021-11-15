@@ -161,28 +161,23 @@
                   const msg = document.getElementById("comments").value;
                   const lname = "Cruise";
                   const url =
-                    "https://letzbefriends.com/ords/lez/llr/ocruiselead?";
-                  var url_full =
-                    url +
-                    "fname=" +
-                    fname +
-                    "&lname=" +
-                    lname +
-                    "&tel=" +
-                    phone +
-                    "&em=" +
-                    email +
-                    "&msg=" +
-                    msg;
-                  var xmlHttp = new XMLHttpRequest();
-                  console.log(url_full);
-                  xmlHttp.open("GET", url_full, true);
-                  xmlHttp.send(null);
+                    "https://g2r8db0vge.execute-api.eu-west-2.amazonaws.com/dev";
+
+                  var xhr = new XMLHttpRequest();
+                  xhr.open("POST", url, true);
+                  xhr.setRequestHeader("Content-Type", "application/json");
+                  var data = JSON.stringify({
+                    name: fname,
+                    email: email,
+                    phone: phone,
+                    msg: msg,
+                  });
+                  xhr.send(data);
+
                   document.getElementById("contactform").style.display = "none";
                   document.getElementById(
                     "message-submit-success"
                   ).style.display = "inline-block";
-                  event.preventDefault();
                 }
                 const form = document.getElementById("contactform");
                 form.addEventListener("submit", submitForm);
